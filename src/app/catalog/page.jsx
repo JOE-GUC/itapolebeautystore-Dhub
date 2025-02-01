@@ -1,9 +1,9 @@
 // pages/catalog.jsx
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useCart } from '@/context/cart' // Add this import
+import { useCart } from "@/context/cart"; // Add this import
 
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -1013,7 +1013,6 @@ const ProductDetails = ({ product, onBack }) => {
             </button>
           </div>
 
-
           {/* Product Details */}
           <div className="space-y-6">
             <div>
@@ -1111,7 +1110,7 @@ const ProductDetails = ({ product, onBack }) => {
     </div>
   );
 };
-const CatalogPage = () => {
+const CatalogContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const productId = searchParams.get("productId");
@@ -1403,6 +1402,13 @@ const CatalogPage = () => {
       </main>
       <Footer />
     </>
+  );
+};
+const CatalogPage = () => {
+  return (
+    <Suspense>
+      <CatalogContent />
+    </Suspense>
   );
 };
 
