@@ -424,7 +424,93 @@ const banners = [
             </div>
           </div>
         </div>
-      </section>
+        </section>
+
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          {/* Header */}
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold">Trending Now</h2>
+            <p className="text-gray-600 text-sm">
+              Get inspired with must-have product and exclusive sales events
+            </p>
+          </div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {trendingItems.map((item) => (
+              <div key={item.id} className="group cursor-pointer">
+                <div className="relative aspect-square overflow-hidden rounded-lg">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {item.badge && (
+                    <div className="absolute top-2 right-2 bg-yellow-400 text-xs px-2 py-1 rounded">
+                      {item.badge}
+                    </div>
+                  )}
+                </div>
+                <h3 className="mt-2 text-sm font-medium text-center">
+                  {item.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Banners */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+              <img
+                src="https://itapelobeautystore.com/cdn/shop/files/IMG_8442.png?v=1717394256&width=360"
+                alt="Sharpest Savings"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4 z-10">
+                <h3 className="text-lg font-bold uppercase tracking-wider text-white drop-shadow-lg">
+                  The Sharpest Savings
+                </h3>
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+            </div>
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+              <img
+                src="https://itapelobeautystore.com/cdn/shop/files/IMG_8466.png?v=1717487116&width=360"
+                alt="New Year Deals"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4 z-10">
+                <h3 className="text-lg font-bold uppercase text-white drop-shadow-lg">
+                  Ring in the New Year with
+                </h3>
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+            </div>
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+              <img
+                src="https://itapelobeautystore.com/cdn/shop/files/IMG_8471.jpg?v=1717487552&width=360"
+                alt="Special Offers"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4 z-10">
+                <h3 className="text-lg font-bold uppercase text-white drop-shadow-lg">
+                  Special Offers
+                </h3>
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+            </div>
+          </div>
+
+          {/* View More Button */}
+          <div className="flex justify-center mt-8">
+            <Link href="/catalog">
+              <button className="flex bg-black text-white items-center px-6 py-2 border border-gray-300 rounded-md transition-colors group">
+                <span>View More</span>
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
+          </div>
+        </div>
 
       {/* Testimonials Section */}
       <section className="py-16 bg-gray-50">
@@ -498,7 +584,7 @@ const banners = [
         </div>
       </section>
 
-    <section className="bg-white py-8 md:py-16">
+      <section className="bg-white py-8 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-16">
